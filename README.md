@@ -155,18 +155,18 @@ matrix(
 )[, 1:ceiling(sqrt(length(unique(my_data))))]
 ```
 
-![image](https://cloud.githubusercontent.com/assets/9083669/25314662/ae9410e4-2848-11e7-9e9b-224ef7f5c8b0.png)
+![image](https://cloud.githubusercontent.com/assets/9083669/25316204/9c641396-2862-11e7-84d0-b4a3272e4865.png)
 
 Binary Encoding in base R.
 
 Ugh, the formula is a bit larger than expected. But you get the idea:
 
-![image](https://cloud.githubusercontent.com/assets/9083669/25314667/b3e691a2-2848-11e7-9085-75b33ac29deb.png)
+![image](https://cloud.githubusercontent.com/assets/9083669/25316205/a7ecf804-2862-11e7-82d1-fb14052680c3.png)
 
 Three key operations to perform for binary encoding.
 * Operation 1: convert my_data to factor, then to integer (“numeric”), then to numeric binary representation (as a vector of length 32 for each observation), then to integer (“numeric”).
 * Operation 2: convert the “numeric” to a matrix with 32 columns and the same number of rows as the number of original observations.
-* Operation 3: using the inverse binary power property (square root, aka power 0.5), remove all the unused columns (the columns with zeroes).
+* Operation 3: using the inverse of the binary power property (ceil(log(N+1)/log(2))), remove all the unused columns (the columns with zeroes).
 
 There are, obviously, easier ways to do this. But I am doing this example to show you can do this in base R. No need fancy package stuff.
 
