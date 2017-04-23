@@ -129,9 +129,8 @@ Sparse One-Hot Encoding in R. There is no difference to the Dense version, excep
 
 ![image](https://cloud.githubusercontent.com/assets/9083669/25314651/9a5182ec-2848-11e7-83e8-57cf3633c3ee.png)
 
-
-The objective of Binary Encoding… is to use binary encoding to hash the cardinalities into binary values.
-By using the power law of binary encoding, we are able to store N cardinalities using ceil(sqrt(N)) features.
+Power of binaries! The objective of Binary Encoding… is to use binary encoding to hash the cardinalities into binary values.
+By using the power law of binary encoding, we are able to store N cardinalities using ceil(log(N+1)/log(2)) features.
 
 It means we can store 4294967295 cardinalities using only 32 features with Binary Encoding! Isn’t it awesome to not have those 4294697295 features from One-Hot Encoding? (how are you going to learn 4 billion features in a decision tree…? you need a depth of 32 and it is not readable…)
 
